@@ -6,8 +6,9 @@ IS_LADDER=1
 IS_SNAKE=2
 IS_WIN=100
 
-#INITIAL PLAYER POSITION
+#VARIABLES
 playerPosition=0
+diceCount=0
 
 #FUNCTION TO ROLL THE DICE 
 function rollDice(){
@@ -21,6 +22,7 @@ function generateOption(){
 	echo $option
 }
 
+declare -A playerPositions
 
 while [ $playerPosition -ne $IS_WIN ]
 do
@@ -53,4 +55,8 @@ do
 			printf "Invalid"
 		;;
 	esac
+	positions[ (( ++diceCount )) ]=$playerPosition
 done
+
+echo ${!positions[@]}
+echo ${positions[@]}
