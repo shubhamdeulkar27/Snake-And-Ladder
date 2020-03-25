@@ -1,0 +1,4 @@
+#!/bin/bash -x
+
+#THIS PROGRAM SIMULATES A SNAKE AND LADDER GAME.
+
